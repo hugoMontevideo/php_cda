@@ -1,24 +1,17 @@
 <?php
 
+$varA = 1;    // integer
+$varB = '1';  // string
 
-$a='bleu';
-$b='blanc';
-$c='rouge';
-
-$trait = '-';
-$d = '';
-
-
-$tableau = [$a, $b, $c];
-
-for($i = 0; $i<count($tableau); $i++ ){
-
-    $d .= $tableau[$i];
-    if(next($tableau)){
-        $d .= $trait;
-    }
+if ($varA == $varB) { // avec le double == on compare uniquement la valeur
+    echo "$varA est égal à $varB en valeur <br>";
 }
-echo $d;
+
+if ($varA === $varB) {  // avec le triple === on compare la valeur et le type
+    echo 'Les deux variables sont égales en valeur ET en type <br>';
+} else {
+    echo 'Les deux variables sont différentes en valeur OU en type <br>';
+}
 
 ?>
 <p>hello</p>
