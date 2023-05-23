@@ -1,15 +1,23 @@
 <?php
 
+$a='bleu';
+$b='blanc';
+$c='rouge';
 
-$langue = 'chinois';
+$trait = '-';
+$d = '';
 
-if ($langue == 'français') { // avec le double == on compare uniquement la valeur
-    echo 'bonjour';
-}elseif($langue == 'espagnol'){
-    echo 'hola';
-}else{
-    echo 'je ne sais pas dire bonjour dans votre langue';
+
+$tableau = [$a, $b, $c];
+
+for($i = 0; $i<count($tableau); $i++ ){
+
+    $d .= $tableau[$i];
+    if(next($tableau)){
+        $d .= $trait;
+    }
 }
+echo $d; 
 
 ?>
 
