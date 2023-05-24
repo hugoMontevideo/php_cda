@@ -1,0 +1,64 @@
+<style>
+    .content{ 
+        padding: 1em;
+    }
+    .connection{
+        display: flex;
+        
+    }
+    .connection a{
+        border: solid black 1px;
+        padding: .5em;
+        margin: 0 0.3em;
+        color: black;
+    }
+</style>
+
+
+<div class="content">
+
+    <?php 
+        //content pour formulaires.php ********
+        //foreach($data as $fEmployee){
+        //     echo '<div class="prenom">';
+        //     echo $fEmployee['prenom'].'<br>';
+        //     echo '</div>';
+        //     echo '<div class="contenu">';
+        //     foreach($fEmployee as $key => $value){
+        //     echo $key.' : '. $value. '<br>';  
+        //     }
+        //     echo '</div>';
+        // }
+        ?>
+    <div class="connection">
+        <?php 
+        if(isset($_SESSION['user'])){ 
+            echo 'Bonjour'. ' ' .$_SESSION['user']['pseudo']. ' <a href="?action=deco">Deconnexion</a><br>'; 
+        } 
+ ?>
+      
+    </div>
+
+
+    <form method="post" action="" enctype="multipart/form-data">
+        <div>
+            <label for="password" id="password">Mot de passe</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div>
+            <label for="picture" id="password">Photo</label>
+            <input type="file" id="picture" name="picture">
+        </div>
+
+        <button type="submit">Valider</button>
+    </form>
+
+    <p><?= $_GET['action'] ?? '' ; ?></p>
+</div>
+
+
+
+
+
+<!-- <p>Bonjour <?php //echo $_SESSION['user']['pseudo'] ?? 'User'?></p>
+        <a href="?action=deco" style='color:black'>Deconnexion </a> -->

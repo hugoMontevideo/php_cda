@@ -15,7 +15,7 @@
 
 function debug($var) {
     echo '<pre>';
-        print_r($var);
+    print_r($var);
     echo '</pre>';
 }
 
@@ -24,13 +24,14 @@ echo '<h2> Connexion à la BDD </h2>';
 //------------------------------
 
 $pdo = new PDO('mysql:host=localhost;dbname=entreprise;charset=UTF8;port=3306', // driver mysql, serveur de la BDD (host), nom de la BDD (dbname) à changer
-               'root', // pseudo de la BDD
-               '' , // mdp de la BDD
-               array(
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,  // option 1 : on affiche les erreurs SQL 
-                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8' // option 2 : on définit le jeu de caractères des échanges avec la BDD
-               )
+'root', // pseudo de la BDD
+'' , // mdp de la BDD
+array(
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,  // option 1 : on affiche les erreurs SQL 
+    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8' // option 2 : on définit le jeu de caractères des échanges avec la BDD
+    )
 );
+var_dump($pdo);
 // $pdo est un objet qui provient de la classe prédéfinie PDO et qui représente la connexion à la base de données.
 
 

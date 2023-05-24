@@ -10,7 +10,7 @@
 // {
 //     echo '<pre>';
 //      var_dump($var);
-//      echo '<pre>';   
+//      echo '</pre>';   
 //  } 
 
 /**
@@ -22,7 +22,7 @@
 // {
 //     echo '<pre>';
 //      print_r($var);
-//      echo '<pre>';   
+//      echo '</pre>';   
 //  } 
 
 /**
