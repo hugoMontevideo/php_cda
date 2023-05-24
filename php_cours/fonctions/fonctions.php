@@ -6,24 +6,24 @@
  * @param array $maVar à debuger avec var_dump
  * @return void
  */
-// function debugV_Dump($var):void
-// {
-//     echo '<pre>';
-//      var_dump($var);
-//      echo '</pre>';   
-//  } 
+function debugV_Dump($var):void
+{
+    echo '<pre>';
+     var_dump($var);
+     echo '</pre>';   
+ } 
 
 /**
  * generer un joli affichage debug
  * @param array $maVar à debuger avec var_dump
  * @return void
  */
-// function debug($var):void
-// {
-//     echo '<pre>';
-//      print_r($var);
-//      echo '</pre>';   
-//  } 
+function debug($var):void
+{
+    echo '<pre>';
+     print_r($var);
+     echo '</pre>';   
+ } 
 
 /**
  * EQUIVAUT IMPLODE ()

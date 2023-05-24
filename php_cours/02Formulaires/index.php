@@ -1,20 +1,15 @@
 <?php 
-include '../../views/formulaires_view.php';
-include 'formulaires1.php';
+include '../views/formulaires_view.php';
+// include 'formulaires1.php';
+include '../fonctions/fonctions.php';
 session_start();
 
-function debugV_Dump($var):void
-{
-    echo '<pre>';
-     var_dump($var);
-     echo '</pre>';   
- } 
+// action vaut $_GET['action']
+$action = array_key_exists('action',$_GET) ? $_GET['action'] :'formulaires1';
 
- function debug($var):void
-{
-    echo '<pre>';
-     print_r($var);
-     echo '</pre>';   
- } 
+require $action.'.php';
+
+
+
 
 

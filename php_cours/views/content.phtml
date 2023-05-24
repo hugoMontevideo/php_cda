@@ -40,7 +40,7 @@
     </div>
 
 
-    <form method="post" action="" enctype="multipart/form-data">
+    <form method="post" action="index.php?action=traitement" enctype="multipart/form-data">
         <div>
             <label for="password" id="password">Mot de passe</label>
             <input type="password" id="password" name="password">
@@ -49,6 +49,7 @@
             <label for="picture" id="password">Photo</label>
             <input type="file" id="picture" name="picture">
         </div>
+        <textarea name="description" id="description" cols="30" rows="10"></textarea>
 
         <button type="submit">Valider</button>
     </form>

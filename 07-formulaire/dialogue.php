@@ -67,7 +67,10 @@ if (!empty($_POST)) {  // si le formulaire a été envoyé
 
 <?php
 // 3. Affichage des commentaires
-$resultat = $pdo->query("SELECT pseudo, message, DATE_FORMAT(date_enregistrement, '%d/%m/%Y') AS datefr, DATE_FORMAT(date_enregistrement, '%H-%i-%s') AS heurefr FROM commentaire ORDER BY date_enregistrement DESC");  // DATE_FORMAT() en SQL permet de reformater une date et l'heure.
+$resultat = $pdo->query(
+    "SELECT pseudo, message, DATE_FORMAT(date_enregistrement, '%d/%m/%Y') AS datefr, DATE_FORMAT(date_enregistrement, '%H-%i-%s') AS heurefr 
+    FROM commentaire 
+    ORDER BY date_enregistrement DESC");  // DATE_FORMAT() en SQL permet de reformater une date et l'heure.
 
 echo '<h2>' . $resultat->rowCount() . ' commentaires </h2>';
 
