@@ -189,8 +189,7 @@ echo '<ul>';
     while ($employe = $resultat->fetch(PDO::FETCH_ASSOC)) {
 
         echo '<li>' . $employe['service'] . '</li>';
-
-    }
+    }  
 echo '</ul>';
 
 
