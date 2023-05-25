@@ -42,6 +42,15 @@
             border-radius: 4px;
 
         }
+        .link-new-msg a{
+            padding: .5em;
+            margin: 0 0.3em;
+            color: #0a0a9d;
+            /* background-color: #0a0a9d; */
+            border-radius: 4px;
+            border: solid #0a0a9d 1px;
+        }
+
         form{ 
             width: 60%;
             margin: 0 auto;

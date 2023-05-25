@@ -1,14 +1,15 @@
 <div class="content">
 
-    <div class="connection">
-        <?php 
-        if(isset($_SESSION['user'])){ 
-            
-            echo $_SESSION['user']['pseudo']. ' <a href="?action=deconnection">Deconnexion</a><br>'; 
-        } 
-        // debugV_Dump($_POST) ;
-        ?>    
+    <?php if(isset($_SESSION['user'])) : ?>
+    <div class="link-new-msg">
+        <a href="index.php?action=formulaires1">Nouveau message</a>
     </div>
+
+    <div class="connection">
+    <?php echo $_SESSION['user']['pseudo']. ' <a href="?action=deconnection">Deconnexion</a><br>'; ?> 
+    </div>
+    <?php endif; ?>
+
     <div class="message">
         <h3><?= $_POST['pseudo'] ?? '' ?></h3>
         <p class="description"><?= $_POST['description'] ?? '' ?></p>

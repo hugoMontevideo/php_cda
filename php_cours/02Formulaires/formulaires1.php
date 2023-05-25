@@ -4,7 +4,7 @@
 // debugV_Dump($_FILES) ;
 
 
-include '../views/content.phtml';
+include '../views/formulaires1.phtml';
 
 
 

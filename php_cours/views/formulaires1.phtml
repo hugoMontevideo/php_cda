@@ -1,5 +1,16 @@
 
 <div class="content">
+    <?php if(isset($_SESSION['user'])) : ?>
+    <div class="link-new-msg">
+        <a href="index.php?action=formulaires1">Nouveau message</a>
+    </div>
+
+        <?php if(isset($_SESSION['user']['pseudo'])) : ?>
+        <div class="connection">
+        <?php echo $_SESSION['user']['pseudo']. ' <a href="?action=deconnection">Deconnexion</a><br>'; ?> 
+        </div>
+        <?php endif; ?>
+    <?php endif; ?>
 
     <?php 
         //content pour formulaires.php ********
@@ -21,12 +32,22 @@
         <legend>Votre message :</legend>
         <div>
             <label for="pseudo">Pseudo</label>
-            <input type="text" name="pseudo" id="pseudo" value="<?= $_POST['pseudo'] ?? ''; ?>">
+            <input type="text" name="pseudo" id="pseudo" value="<?= $_SESSION['user']['pseudo'] ?? ''; ?>">
+            <p style="color:red;"><?=  $_SESSION['errorPseudo']  ?? '' ?></p>
+            <?php unset($_SESSION['errorPseudo']); ?>
+
         </div>
+        
+        <?php if(!isset($_SESSION['user']['password'])) : ?>
         <div>
             <label for="password" id="password">Mot de passe</label>
             <input type="password" id="password" name="password">
+            <p style="color:red;"><?=  $_SESSION['errorPassw']  ?? '' ?></p>
+            <?php unset($_SESSION['errorPassw']); ?>
+
         </div>
+        <?php endif; ?>
+
         <div>
             <label for="picture" id="password">Photo</label>
             <input type="file" id="picture" name="picture">
