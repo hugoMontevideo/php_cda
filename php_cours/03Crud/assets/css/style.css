@@ -1,3 +1,14 @@
 .container{
     min-height: 70vh;
 }
+.footer{
+    background: hsla(202, 79%, 62%, 1);
+
+    background: linear-gradient(315deg,hsla(176, 57%, 89%, 1) 0%, hsla(199, 75%, 72%, 1) 30%,  hsla(202, 79%, 62%, 1) 100%);
+    
+    background: -moz-linear-gradient(315deg,hsla(176, 57%, 89%, 1) 0%, hsla(199, 75%, 72%, 1) 30%,  hsla(202, 79%, 62%, 1) 100%);
+    
+    background: -webkit-linear-gradient(315deg,hsla(176, 57%, 89%, 1) 0%, hsla(199, 75%, 72%, 1) 30%,  hsla(202, 79%, 62%, 1) 100%);
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#50b3eb", endColorstr="#80cbed", GradientType=1 );
+}

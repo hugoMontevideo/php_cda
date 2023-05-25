@@ -33,8 +33,8 @@
         <div>
             <label for="pseudo">Pseudo</label>
             <input type="text" name="pseudo" id="pseudo" value="<?= $_SESSION['user']['pseudo'] ?? ''; ?>">
-            <p style="color:red;"><?=  $_SESSION['errorPseudo']  ?? '' ?></p>
-            <?php unset($_SESSION['errorPseudo']); ?>
+            <p style="color:red;"><?=  $_SESSION['user']['errorPseudo']  ?? '' ?></p>
+            <?php unset($_SESSION['user']['errorPseudo']); ?>
 
         </div>
         
@@ -42,14 +42,13 @@
         <div>
             <label for="password" id="password">Mot de passe</label>
             <input type="password" id="password" name="password">
-            <p style="color:red;"><?=  $_SESSION['errorPassw']  ?? '' ?></p>
-            <?php unset($_SESSION['errorPassw']); ?>
-
+            <p style="color:red;"><?=  $_SESSION['user']['errorPassw']  ?? '' ?></p>
+            <?php unset($_SESSION['user']['errorPassw']); ?>
         </div>
         <?php endif; ?>
 
         <div>
-            <label for="picture" id="password">Photo</label>
+            <label for="picture" id="picture">Photo</label>
             <input type="file" id="picture" name="picture">
         </div>
         <textarea name="description" id="description" cols="30" rows="10"></textarea>
@@ -61,7 +60,3 @@
 
 
 
-
-
-<!-- <p>Bonjour <?php //echo $_SESSION['user']['pseudo'] ?? 'User'?></p>
-        <a href="?action=deco" style='color:black'>Deconnexion </a> -->

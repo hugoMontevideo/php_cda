@@ -1,6 +1,6 @@
 
     </div><!-- end .container -->
-    <div class="jumbotron">
+    <div class="footer jumbotron">
   <h1 class="display-3">Footer</h1>
   <p class="lead">Exercice Crud. CDA Simplon</p>
   <hr class="my-4">

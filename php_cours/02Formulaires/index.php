@@ -3,10 +3,10 @@ include '../views/formulaires_view.php';
 // include 'formulaires1.php';
 include '../fonctions/fonctions.php';
 
-// var_dump($_SESSION); die();
 
 if(!isset($_SESSION)){
     session_start();
+    //var_dump($_SESSION);
 }
 
 // action vaut $_GET['action']
@@ -23,13 +23,3 @@ if(array_key_exists('action',$_GET)){
 require $action.'.php';
 
 
-
-
-// if ($_GET['action'] == 'traitement'){
-//     $action = 'traitement';
-// }else{
-//     $action = 'formulaires1';
-// }
-
-
-// require $action . '.php';
