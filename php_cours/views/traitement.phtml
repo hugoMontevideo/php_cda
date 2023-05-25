@@ -1,2 +1,17 @@
-<h3></h3>
-<p class="description">hello</p>
+<div class="content">
+
+    <div class="connection">
+        <?php 
+        if(isset($_SESSION['user'])){ 
+            
+            echo $_SESSION['user']['pseudo']. ' <a href="?action=deconnection">Deconnexion</a><br>'; 
+        } 
+        // debugV_Dump($_POST) ;
+        ?>    
+    </div>
+    <div class="message">
+        <h3><?= $_POST['pseudo'] ?? '' ?></h3>
+        <p class="description"><?= $_POST['description'] ?? '' ?></p>
+    </div>
+    
+</div>
