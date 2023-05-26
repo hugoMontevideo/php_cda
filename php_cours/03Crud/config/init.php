@@ -17,3 +17,4 @@ const CONFIG = [
 ];
 
 const BASE_PATH = '/PHP/php_cours/03Crud';
+//  '/PHP/php_cours/03Crud';

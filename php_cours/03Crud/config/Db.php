@@ -9,7 +9,7 @@ class Db{
             return $pdo = new PDO(
                 'mysql:host='. CONFIG['db']['HOST'] . ';dbname='. CONFIG['db']['NAME'] .';charset=UTF8;port='.CONFIG['db']['PORT'], 
                 CONFIG['db']['USER'], 
-                CONFIG['db']['USER'], 
+                CONFIG['db']['PWD'], 
                 array(
                     // option 1 : on affiche les erreurs SQL 
                     //PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,  
