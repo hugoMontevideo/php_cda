@@ -2,8 +2,6 @@
 require_once '../config/function.php';
 require_once '../inc/header.inc.php';  
 
-if( session_status() !== PHP_SESSION_ACTIVE ) session_start();
-
 if(!empty($_POST)){
     $error = false;
     // debugV_Dump($_FILES);
@@ -21,9 +19,10 @@ if(!empty($_POST)){
     if(empty($_POST['email'])){
         $email = 'Email obligatoire';
         $error = true;
+
     }else{
         $user = execute('SELECT * FROM user WHERE email= :email', 
-                array(':email'=> $_POST['email']) );
+                    array(':email'=> $_POST['email']) );
         
         if($user->rowCount()==0){
             
@@ -53,17 +52,21 @@ if(!empty($_POST)){
         $picture = 'Photo obligatoire';
         $error = true;
     }else{
-        $format = ['image/png', 'image/jpg', 'image/jpeg', 'image/gif','image/webp'];
+        $formats = ['image/png', 'image/jpg', 'image/jpeg', 'image/gif','image/webp'];
         $picture = '';
-        if(!in_array($_FILES['picture_profil']['type'], $format)){
+
+        if(!in_array($_FILES['picture_profil']['type'], $formats)){
             $picture.='Les formats autorisés sont : png, jpeg, jpg, gif, webp .<br>';
             $error = true;
         }
+
         if($_FILES['picture_profil']['size'] > 2000000 ){
             $picture .= 'Taille maximale autorisé : 2M .';
             $error = true;
         }
-    }
+    }  // fin contrôle de formulaire
+
+
  
     if (!$error){
         // renommer photo
@@ -78,7 +81,6 @@ if(!empty($_POST)){
         $mdp = password_hash($_POST['password'], PASSWORD_DEFAULT);
     
         // on lance l'insertion
-    
         $resultat = execute('INSERT INTO user (nickname, email, password, picture_profil, role )
                             VALUES (:nickname, :email, :password, :picture_profil, :role )',
                             array(
@@ -89,15 +91,18 @@ if(!empty($_POST)){
                                 ':role' => 'ROLE_USER'
                             ), 
                             'true'
-                        ); // rappel : le dernier argument permet d'obtenir lastId
+                    ); // rappel : le dernier argument permet d'obtenir lastId
 
-        // debugV_Dump($resultat);
-    }
-    
-} ?>
+          
+        if( $resultat ) $success= '<div class="alert alert-success w-50 mx-auto mt-5">Votre inscription a été réalisée avec succès.</div>';
+    }   
+}// fin !empty($_POST)
+?>
 
 <!-- affiche l'erreur si l'email est déjà utilisé -->
 <?= $unique_email ?? '' ?>
+<?= $success ?? '' ?>
+
 
 <form class="mt-5 w-75 mx-auto" method="post" enctype="multipart/form-data">
     <div class="mb-3">
@@ -117,6 +122,7 @@ if(!empty($_POST)){
         <input name="password" type="password" class="form-control" id="exampleInputPassword1">
         <small class="text-danger"><?= $password ?? '' ?></small>
     </div>
+
     <div class="mb-3">
         <label for="picture_profil" class="form-label">Photo de profil*</label>
         <input name="picture_profil" type="file" class="form-control" id="picture_profil">

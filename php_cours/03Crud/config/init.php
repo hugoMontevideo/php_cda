@@ -1,6 +1,6 @@
 <?php 
 // fichier configuration de l'Application
-session_start();
+if( session_status() !== PHP_SESSION_ACTIVE ) session_start();
 
 const CONFIG = [
     'db' => [
@@ -18,3 +18,6 @@ const CONFIG = [
 
 const BASE_PATH = '/PHP/php_cours/03Crud';
 //  '/PHP/php_cours/03Crud';
+
+// en dev
+const DB_SQL_DEBUG = true;

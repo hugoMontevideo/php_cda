@@ -3,22 +3,24 @@ require_once '../config/function.php';
 require_once '../inc/header.inc.php';
 
 $users = execute("SELECT * FROM user");
-debugV_Dump($users);
 $users = $users->fetchAll(PDO::FETCH_ASSOC);
 
 if(isset($_GET['i'])){
     // modifier role
     if(isset($_GET['a']) && $_GET['a'] == "role"){
         $users = execute("SELECT role FROM user WHERE id=:id", array(':id'=>$_GET['i']))->fetch(PDO::FETCH_ASSOC);
-        if($user['role'=='ROLE_USER']){
+        
+        // debugV_Dump($users); die();
+        if($users['role'] =='ROLE_USER'){
             execute("UPDATE user SET role=:role WHERE id=:id", array(
                 ':role'=>'ROLE_ADMIN',
                 ':id'=>$_GET['i']
 
             ));
+
         }else{
             execute("UPDATE user SET role=:role WHERE id=:id", array(
-                ':role'=>'ROLE_ADMIN',
+                ':role'=>'ROLE_USER',
                 ':id'=>$_GET['i']
 
             ));
@@ -62,9 +64,21 @@ if(isset($_GET['i'])){
                 <td><img src="<?= '../assets/'. $user['picture_profil']; ?>" width="90" alt="<?= $user['nickname'] ?>" ></td>
                 <td><?= $user['role'] ?></td>
                 <td>
-                    <a href="?a=upd&i=<?= $user['id'] ?>" class="btn btn-success">Modifier</a>
-                    <a href="?a=role&i=<?= $user['id'] ?>" class="btn btn-primary">Changer Rôle</a>
-                    <a href="?a=del&i=<?= $user['id'] ?>" class="btn btn-danger">Supprimer</a>
+                    <a 
+                        href="?a=upd&i=<?= $user['id'] ?>" 
+                        class="btn btn-success"
+                        >Modifier
+                    </a>
+                    <a 
+                        href="?a=role&i=<?= $user['id'] ?>" 
+                        class="btn btn-primary"
+                        ><?= ($user['role']=='ROLE_USER') ?'Passer ADMIN' : 'Passer UTILISATEUR' ?>
+                    </a>
+                    <a 
+                        href="?a=del&i=<?= $user['id'] ?>" 
+                        class="btn btn-danger"
+                        >Supprimer
+                    </a>
                 </td>
             </tr>
             <?php endforeach ;  ?>
