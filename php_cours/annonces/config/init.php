@@ -6,17 +6,17 @@ const CONFIG = [
     'db' => [
         'HOST' => 'localhost',
         'PORT' => '3306',
-        'NAME' => 'crud',
+        'NAME' => 'annonces',
         'USER' => 'root',
         'PWD' => ''
     ],
     'app'=> [
-        'name' => 'CRUD',
-        'projecturl' => 'http://localhost/PHP/php_cours/03Crud'
+        'name' => 'annonces',
+        'projecturl' => 'http://localhost/PHP/php_cours/annonces'
     ]
 ];
 
-const BASE_PATH = '/PHP/php_cours/03Crud';
+const BASE_PATH = '/PHP/php_cours/annonces';
 //  '/PHP/php_cours/03Crud';
 
 // en dev
