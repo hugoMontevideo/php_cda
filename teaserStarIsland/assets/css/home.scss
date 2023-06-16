@@ -1,0 +1,190 @@
+section.home{
+    position: relative;
+    height: 95vh;
+    // background-image: url("../pictures/gta_decors1-mob.jpg");
+    // background-size: 100%;
+    // .layout-section{
+    //     background: rgb(0,0,0);
+    //     background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0) 90%, rgba(0,0,0,1) 100%);
+    //     position: absolute;
+    //     top: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     right: 0;
+    // }
+    .layout-section{
+        background: rgb(0,0,0);
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0) 90%, rgba(0,0,0,1) 100%);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+.diaporama{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    .elements{
+        display: flex;
+        position: relative;
+        transition: .5s linear;
+    }
+
+    .element{
+        flex: 1 0 100%;
+        width: 100vw;
+
+        img{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+    }
+    .caption{
+        position: absolute;
+        top: 20%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        h2{
+            color: white;
+            font-size: 1.7em;
+            margin: 0 0 2em;
+        }
+        p{
+            padding: 0 2em;
+            font-size: 1.2em;
+        }
+    }
+    .puces{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 25%;
+        z-index: 10;
+        transition: opacity .5s;
+        div{
+            margin: 0 1em;
+            border-radius: 50%;
+            width: 100%;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border: solid 1px white;
+        }
+        div.active{
+            border: solid 2px #e83e8c;
+            
+        }
+    }
+}
+section.home2{
+    position: relative;
+    img{
+        width: 100%;
+        height: 100vh;
+    }
+    .layout-section2{
+        background: rgb(0,0,0);
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 10%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0) 90%, rgba(0,0,0,1) 100%);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .home2-avis{
+        position: absolute;
+        top: 3%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+    .avis:nth-child(even) {
+        // background: #f06c6c
+        border-radius: 40px 0 40px 40px;
+        flex-direction: row;
+    }
+    .avis:nth-child(odd) {
+        // background: #c8f5c3}
+        border-radius: 0 40px 40px 40px;
+        flex-direction: row-reverse;
+    }
+    .avis{
+        background-color: #fa608193;
+        color: black;
+        margin: .4em 1em;
+        padding: .8em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img.avatar{
+            width: 5em;
+            height: 5em;
+            object-fit: cover;
+            border-radius: 50%;
+            border: #e83e8c solid 3px;
+        }
+
+        .avis-container{
+            padding: 0 1em;
+        }
+        .texte{
+            text-align: left;
+        }
+    }
+    .home2-form{
+        position: absolute;
+        bottom: 7em;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        transform: translate(-50%);
+        background-color: #393333c7;
+        padding: 1.5em 2em;
+        border-radius: 8px;
+        box-shadow: 1px 1px 6px #ffffff83;
+        legend{
+            color: white;
+            margin: 0;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        textarea{
+            border: none;
+            border-radius: 6px;
+            margin: 1em 0 0;
+            padding: .5em;
+           background-color: #ffffffdf;
+        }
+        button{
+            width: 6em;
+            margin: .5em auto 0;  
+            border: none;
+            border-radius: 4px;
+            background-color: blue;
+            color: white;  
+        }
+    }
+    .etoiles{
+        display: flex;
+        justify-content: space-evenly;
+        img{
+            width: 2em;
+            height: 2em;
+            // object-fit: cover; 
+        }
+    }
+}
